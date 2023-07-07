@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: int_vendas__pedidos_itens
+    description: Modelo intermediario para contrução da fato vendas.
+    columns:
+      - name: pk_vendas
+        description: Chave primária da tabela produtos.
+        tests:
+          - unique
+          - not_null
