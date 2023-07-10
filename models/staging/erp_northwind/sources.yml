@@ -1,5 +1,4 @@
 version: 2
-
 sources:
   - name: erp
     schema: erp_northwind
@@ -10,4 +9,28 @@ sources:
           - name: employee_id
             tests:
               - unique
-              - not_null 
+              - not_null
+      - name: products
+        description: Tabela com os produtos comercializados pela Northwind.
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
+      - name: categories
+        description: Tabela com as categorias dos produtos comercializados pela Northwind.
+      - name: suppliers
+        description: Fornecedores dos produtos comercializados pela Northwind.
+
+      - name: orders 
+        description: Fornecedores dos produtos comercializados pela Northwind.
+        columns:
+          - name: order_id
+            description: Chave primaria da tabela de ordens.
+            tests:
+             - unique 
+             - not_null 
+            
+      - name: order_details 
+        description: Detalhe de item linha para cada pedida da tabela ordens.
+        
