@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: fct_vendas
+    description: Tabela fato de vendas.
+    columns:
+      - name: pk_vendas
+        description: Chave primária da tabela produtos.
+        tests:
+          - unique
+          - not_null
