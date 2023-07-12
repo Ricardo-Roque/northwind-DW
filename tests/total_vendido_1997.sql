@@ -3,7 +3,6 @@
         severity = 'error'
     )
 }}
-
 with
     vendas_em_1997 as (
         select sum(total_bruto) as total_vendido
