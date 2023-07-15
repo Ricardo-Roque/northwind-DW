@@ -31,4 +31,13 @@ sources:
               - not_null
       - name: order_details
         description: Detalhe de item linha para cada pedido da tabela ordens.
-        
+      - name: customers
+        description: Uma linha por cliente. 
+        columns:
+          - name: customer_id
+            description: Chave primária da tabela clientes.
+            tests:
+              - unique 
+              - not_null
+            
+    

@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: dim_clientes
+    description: Dimensão de clientes da Northwind.
+    columns:
+      - name: id_cliente
+        description: Chave primária da tabela clientes.
+        tests:
+          - unique
+          - not_null
+
+      - name: nome_empresa				
+        description: blalal 
+      
+      - name: nome_contato				
+        description: balala
+      
+      - name: cargo_profission
+        description: balala
+      
+      - name: endereco_cliente
+        description: balalla
+      
+      - name: cidade_clinte 		
+        description: balala
+      
+      - name: regiao_cliente		
+        description: balalla
+      
+      - name: cep_cliente				
+        description: balaa
+      
+      - name: pais_cliente				
+        description: balabal
+      
