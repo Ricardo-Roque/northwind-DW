@@ -3,6 +3,10 @@ with
         select *
         from {{ ref('dim_employees') }}
     )
+    customer as (
+        select *
+        from {{ ref('dim_clientes') }}
+    )
     , produtos as (
         select *
         from {{ ref('dim_produtos') }}
@@ -16,6 +20,7 @@ with
             pedidos_itens.pk_vendas
             , pedidos_itens.id_pedido
             , produtos.id_produto
+            , pedido_itens.id_cliente
             , employees.funcionario_id
             , pedidos_itens.id_transportadora
             , pedidos_itens.desconto_perc
@@ -31,6 +36,7 @@ with
             , pedidos_itens.cidade_destinatario
             , pedidos_itens.regiao_destinatario
             , pedidos_itens.pais_destinatario
+            , customer.nome_completo
             , employees.nome_completo as funcionario_nome_completo
             , employees.gerente_nome
             , produtos.nome_produto
@@ -40,6 +46,7 @@ with
         from pedidos_itens
         left join produtos on pedidos_itens.id_produto = produtos.id_produto
         left join employees on pedidos_itens.id_funcionario = employees.funcionario_id
+        left join customer on pedido_itens.id_cliente = customer.id_cliente
     )
     , transformacoes as (
         select
